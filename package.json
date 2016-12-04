@@ -1,0 +1,16 @@
+{
+  "name": "jsdoc-memosa",
+  "license": "MIT",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "jsdoc": "^3.4.3",
+    "jsdoc-babel": "^0.2.1",
+    "jsdoc-to-markdown": "^2.0.1"
+  },
+  "dependencies": {
+    "commander": "^2.9.0"
+  },
+  "bin": {
+    "jsdoc:perFile": "scripts/docs.js"
+  }
+}
