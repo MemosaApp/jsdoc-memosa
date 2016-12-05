@@ -10,13 +10,13 @@ program.arguments('<files>')
   .option('-i, --ignore <ignore>', 'Files to ignore')
   .option('-c, --config <config>', 'Configuration file for jsdoc')
   .action(function(files) {
-    let options = {};
+    var options = {};
 
     if (program.ignore) {
       options.ignore = program.ignore;
     }
 
-    let globFiles = glob.sync(files, options);
+    var globFiles = glob.sync(files, options);
 
     globFiles.forEach(f => {
       // Don't write the file if it would be empty
