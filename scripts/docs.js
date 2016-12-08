@@ -24,6 +24,10 @@ program.arguments('<files>')
         './node_modules/jsdoc-to-markdown/bin.js ' +
         f + (program.config ? (' -c ' + program.config + ' ') : ''),
         function (error, stdout, stderr) {
+          if (error || stdout) {
+            console.error(error || stdout);
+          }
+
           if (stdout.trim() !== '') {
             fs.writeFile(f.replace('.js', '.md'), stdout, function callback() {
               console.log('>>> Generated docs for ' + f);
@@ -32,6 +36,5 @@ program.arguments('<files>')
         }
       );
     });
-
   })
   .parse(process.argv);
