@@ -19,7 +19,7 @@ In your `package.json`, add:
 
 ```
 "scripts": {
-  "docs": "jsdoc:perFile 'imports/**/*.js' -i *.text.js -c jsdoc.json"
+  "docs": "jsdoc:perFile 'imports/**/*.js' -i 'imports/**/*.test.js' -c jsdoc.json"
 }
 ```
 
@@ -35,7 +35,10 @@ A typical `jsdoc.json` file will look like:
 
 ```json
 {
-  "plugins": ["node_modules/jsdoc-babel"]
+  "plugins": ["node_modules/jsdoc-babel"],
+  "babel": {
+
+  }
 }
 
 ```
