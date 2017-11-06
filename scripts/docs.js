@@ -30,7 +30,7 @@ program.arguments('<files>')
     globFiles.forEach(f => {
       // Don't write the file if it would be empty
       exec(
-        './node_modules/jsdoc-to-markdown/bin.js ' +
+        './node_modules/jsdoc-to-markdown/bin/cli.js ' +
         f + (program.config ? (' -c ' + program.config + ' ') : ''),
         function (error, stdout, stderr) {
           if (error || stderr) {
